@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de Biblioteca</title>
+</head>
+<body>
+    <h1>Gerenciamento de Biblioteca</h1>
+    <nav>
+        <a href="/usuarios">Gerenciar Usuários</a> | 
+        <a href="/livros">Gerenciar Livros</a> | 
+        <a href="/buscar">Buscar</a>
+    </nav>
+    <h2>Locações</h2>
+    <ul>
+        {% for locacao in locacoes %}
+            <li style="color: {% if locacao.atrasado %}red{% else %}black{% endif %};">
+                Usuário {{ locacao.id_usuario }} alugou o livro {{ locacao.id_livro }} em {{ locacao.data_retirada }}
+                {% if locacao.data_devolucao %}
+                    | Devolvido em {{ locacao.data_devolucao }}
+                {% else %}
+                    | Previsto: {{ locacao.data_prevista }}
+                    <form action="/registrar_devolucao/{{ locacao.id }}" method="post" style="display:inline;">
+                        <input type="date" name="data_devolucao" required>
+                        <button type="submit">Registrar Devolução</button>
+                    </form>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <title>Matrículas para Educação Infantil</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="{{ url_for('static', filename='images/logo_mobile.svg')}}" alt="">
+      <h2>Secretaria Municipal de Educação</h2>
+    </header>
+      <section>
+        <h3>Bem-vindos ao Sistema de Cadastro para Pré-Matrícula em Instituições de Educação Infantil!</h3>
+        <p>Este sistema foi desenvolvido para facilitar o cadastramento de pré-matrícula de crianças nas creches e
+          pré-escolas do município de Nanuque. O período de cadastramento ocorrerá de [data de início] a [data de
+          término].</p><br>
+        <p class="aviso"><strong>Importante:</strong></p>
+        <ul>
+          <li>Antes de realizar a pré-matrícula, o responsável legal da criança devem se Cadastrar como usuário do sistema.</li>
+          <li>Certifique-se de preencher todos os campos obrigatórios dos formulários.</li>
+          <li>Tenha em mãos os documentos necessários para completar o cadastro e realizar a pré-matrícula.</li>
+        </ul>
+      </section>
+      <div class="button-group">        
+          <a href="{{ url_for('sign_up') }}" class="button">Cadastrar</a></li>
+          <a href="{{ url_for('login') }}" class="button">Pré-matrícula</a></li>        
+      </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2024 Todos os diretos são reservados</p>
+    <p>Este projeto está licenciado sob a <a
+        href="https://github.com/maxwelldeveloper7/cadastro-creches/blob/main/LICENSE">licença MIT</a>.</p>
+  </footer>
+
+  <!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Usuários</title>
+</head>
+<body>
+    <h1>Gerenciar Usuários</h1>
+    <form action="/cadastrar_usuario" method="post">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="turma" placeholder="Turma" required>
+        <input type="text" name="nome_turma" placeholder="Nome da Turma" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.id }} - {{ usuario.nome }} ({{ usuario.turma }} - {{ usuario.nome_turma }})</li>
+        {% endfor %}
+    </ul>
+    <nav>
+        <a href="/livros">Gerenciar Livros</a>
+        <a href="/buscar">Buscar</a>
+    </nav>
+</body>
+</html>
