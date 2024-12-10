@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar emprestimo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Registrar Empréstimo -->
+    <section id="registrar_emprestimo">
+        <h2>Registrar Empréstimo</h2>
+        <form action="/registrar_emprestimo" method="post">
+            <label for="aluno_id">ID do Aluno:</label>
+            <input type="text" id="aluno_id" name="aluno_id" required><br>
+            <label for="livro_id">ID do Livro:</label>
+            <input type="text" id="livro_id" name="livro_id" required><br>
+            <button type="submit">Registrar Empréstimo</button>
+        </form>
+    </section>
+</body>

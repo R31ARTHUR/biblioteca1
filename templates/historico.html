@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+ <!-- Histórico de Empréstimos -->
+ <section id="historico">
+    <h2>Histórico de Empréstimos</h2>
+    <ul>
+        <!-- Os itens abaixo serão gerados dinamicamente -->
+        {% for item in historico %}
+        <li>
+            Aluno: {{ item.aluno.nome }} ({{ item.aluno.turma }} - {{ item.aluno.serie }} {{ item.aluno.turno }})<br>
+            Livro: {{ item.livro.titulo }}<br>
+            Data de Devolução: {{ item.data_devolucao }}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+</body>

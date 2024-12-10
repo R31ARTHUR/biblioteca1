@@ -2,31 +2,25 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Gerenciamento de Biblioteca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Gerenciamento de Biblioteca</h1>
+    <h1>Bem-vindo à Biblioteca Escolar</h1>
     <nav>
-        <a href="/usuarios">Gerenciar Usuários</a> | 
-        <a href="/livros">Gerenciar Livros</a> | 
-        <a href="/buscar">Buscar</a>
+        <ul>
+            <li><a href="{{ url_for('cadastrar_aluno') }}">Cadastrar Aluno</a></li>
+            <li><a href="{{ url_for('cadastrar_livro') }}">Cadastrar Livro</a></li>
+            <li><a href="{{ url_for('registrar_emprestimo') }}">Registrar Empréstimo</a></li>
+            <li><a href="{{ url_for('registrar_devolucao') }}">Registrar Devolução</a></li>
+            <li><a href="{{ url_for('atrasados') }}">Atrasados</a></li>
+            <li><a href="{{ url_for('historico') }}">Histórico de Devoluções</a></li>
+        </ul>
     </nav>
-    <h2>Locações</h2>
-    <ul>
-        {% for locacao in locacoes %}
-            <li style="color: {% if locacao.atrasado %}red{% else %}black{% endif %};">
-                Usuário {{ locacao.id_usuario }} alugou o livro {{ locacao.id_livro }} em {{ locacao.data_retirada }}
-                {% if locacao.data_devolucao %}
-                    | Devolvido em {{ locacao.data_devolucao }}
-                {% else %}
-                    | Previsto: {{ locacao.data_prevista }}
-                    <form action="/registrar_devolucao/{{ locacao.id }}" method="post" style="display:inline;">
-                        <input type="date" name="data_devolucao" required>
-                        <button type="submit">Registrar Devolução</button>
-                    </form>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    <footer>
+        <p>© 2024 Biblioteca Escolar - Sistema de Gerenciamento</p>
+    </footer>
 </body>
 </html>

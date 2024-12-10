@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrasados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<!-- Alunos com Atrasos -->
+    <section id="atrasados">
+        <h2>Alunos com Atrasos</h2>
+            <ul>
+                <!-- Os itens abaixo serão gerados dinamicamente -->
+                {% for atraso in atrasados %}
+                <li>
+                    Aluno: {{ atraso.aluno.nome }} ({{ atraso.aluno.turma }} - {{ atraso.aluno.serie }} {{ atraso.aluno.turno }})<br>
+                    Livro: {{ atraso.livro.titulo }}<br>
+                    Data Prevista para Devolução: {{ atraso.data_prevista }}
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
