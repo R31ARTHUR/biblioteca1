@@ -1,3 +1,5 @@
+@import url(./reset.css);
+
 /* Estilo básico para melhorar a acessibilidade */
 body {
     font-family: Arial, sans-serif;
