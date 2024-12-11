@@ -8,16 +8,18 @@
 </head>
 <body>
     <h1>Bem-vindo à Biblioteca Escolar</h1>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('cadastrar_aluno') }}">Cadastrar Aluno</a></li>
-            <li><a href="{{ url_for('cadastrar_livro') }}">Cadastrar Livro</a></li>
-            <li><a href="{{ url_for('registrar_emprestimo') }}">Registrar Empréstimo</a></li>
-            <li><a href="{{ url_for('registrar_devolucao') }}">Registrar Devolução</a></li>
-            <li><a href="{{ url_for('atrasados') }}">Atrasados</a></li>
-            <li><a href="{{ url_for('historico') }}">Histórico de Devoluções</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('cadastrar_aluno') }}">Cadastrar Aluno</a></li>
+                <li><a href="{{ url_for('cadastrar_livro') }}">Cadastrar Livro</a></li>
+                <li><a href="{{ url_for('registrar_emprestimo') }}">Registrar Empréstimo</a></li>
+                <li><a href="{{ url_for('registrar_devolucao') }}">Registrar Devolução</a></li>
+                <li><a href="{{ url_for('atrasados') }}">Atrasados</a></li>
+                <li><a href="{{ url_for('historico') }}">Histórico de Devoluções</a></li>
+            </ul>
+        </nav>
+    </header>
     <footer>
         <p>© 2024 Biblioteca Escolar - Sistema de Gerenciamento</p>
     </footer>
