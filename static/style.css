@@ -9,6 +9,11 @@ body {
     padding: 0;
 }
 
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
 header {
     background-color: #003366;
     color: #ffffff;
