@@ -1,5 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+"""
+    Rotas do sistema
+"""
 from datetime import datetime, timedelta
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -12,6 +15,23 @@ emprestimos = []  # Lista para armazenar empréstimos
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/acervo')
+def acervo():
+    """
+    lista o acervo da biblioteca
+    """
+    return render_template('acervo.html', livros=livros)
+
+
+@app.route('/alunos')
+def listar_alunos():
+    """
+    lista alunos cadastrados
+    """
+    return render_template('alunos.html', alunos=alunos)
+
 
 # Cadastro de alunos
 @app.route('/cadastrar_aluno', methods=['GET', 'POST'])
@@ -41,6 +61,15 @@ def cadastrar_livro():
         livros.append(livro)
         return redirect(url_for('cadastrar_livro'))
     return render_template('cadastrar_livro.html', livros=livros)
+
+
+
+@app.route('/emprestimos')
+def livros_emprestados():
+    """
+        Retorna uma lista de livros que estão emprestados
+    """
+    return render_template('emprestimos.html', emprestimos=emprestimos, alunos=alunos, livros=livros)
 
 # Registro de empréstimos
 @app.route('/registrar_emprestimo', methods=['GET', 'POST'])
