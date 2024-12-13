@@ -19,16 +19,24 @@ h1 {
 
 nav {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-top: solid 1px red;
     border-bottom: solid 1px red;
     height: 80vh;
+    gap: 2rem;
+    
+}
+
+nav h2 {
+    
 }
 
 nav ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 2rem;
 }
 
 nav ul li a {
