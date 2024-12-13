@@ -20,7 +20,8 @@ h1 {
 nav {
     display: flex;
     justify-content: center;
-    border: solid 1px red;
+    border-top: solid 1px red;
+    border-bottom: solid 1px red;
     height: 80vh;
 }
 
