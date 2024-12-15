@@ -1,5 +1,4 @@
 @import url(./reset.css);
-
 body {
     /* display: flex;
     flex-direction: column; */
@@ -22,7 +21,6 @@ h1 {
 nav {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border-top: solid 1px #000;
     border-bottom: solid 1px #000;
@@ -34,12 +32,19 @@ nav ul {
     display: flex;
     flex-direction: row;
     gap: .5rem;
+    height: 100%;
+    margin-top: 4%;
+}
+
+nav ul li{
+    flex: 1;
+    display: flex;
+    align-items: stretch;
 }
 
 nav ul li a {
-    display: inline-block; /* Faz com que a tag se comporte como um elemento em bloco, ajustável */
+    display: block; /* Muda para block para comportar altura responsiva */
     padding: 1.5rem;
-    background-color: #007bff;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -47,16 +52,32 @@ nav ul li a {
     font-size: 1rem;
     font-weight: bold;
     border: none;
-    width: 10rem;
-    height: 46rem;
-    transition: background-color 0.3s ease; /* Animação suave ao passar o mouse */
+    width: 9.5rem;
+    height: 90%; /* Altura inicial menor para simular um livro fechado */
+    transition: all 0.5s ease; /* Transição suave para tamanho e escala */
 }
 
 nav ul li a:hover {
-    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta a largura e altura sem afetar os outros elementos */
+    font-size: 1.2rem;
     cursor: pointer; /* Mostra o cursor de mão */
 }
 
+#cadastro {
+    background-color: #b95005;
+}
+
+#acervo {
+    background-color: #165e46;
+}
+
+#emprestados {
+    background-color: #a52a2a;
+}
+
+#historico {
+    background-color: #063464;
+}
 footer {
     text-align: center;
     height: 10vh;

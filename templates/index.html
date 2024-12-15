@@ -12,10 +12,10 @@
         <h1>Controle de Bíblioteca Escolar</h1>
         <nav>
             <ul>
-                <li><a href="{{ url_for('listar_alunos') }}">Cadastro de Alunos</a></li>
-                <li><a href="{{ url_for('acervo') }}">Acervo Bibliográfico</a></li>
-                <li><a href="{{ url_for('livros_emprestados') }}">Registro de Empréstimos</a></li>
-                <li><a href="{{ url_for('historico') }}">Histórico</a></li>
+                <li><a href="{{ url_for('listar_alunos') }}" id="cadastro">Cadastro de Alunos</a></li>
+                <li><a href="{{ url_for('acervo') }}" id="acervo">Acervo Bibliográfico</a></li>
+                <li><a href="{{ url_for('livros_emprestados') }}" id="emprestados">Registro de Empréstimos</a></li>
+                <li><a href="{{ url_for('historico') }}" id="historico">Histórico</a></li>
             </ul>
         </nav>
     </header>
