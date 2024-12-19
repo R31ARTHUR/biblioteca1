@@ -116,8 +116,8 @@ def atrasados():
     return render_template('atrasados.html', atrasados=atrasados_list)
 
 # Histórico de devoluções
-@app.route('/historico')
-def historico():
+@app.route('/relatorios')
+def relatorios():
     historico_list = [
         {
             'aluno': next((al for al in alunos if al['id'] == emp['aluno_id']), None),
