@@ -75,3 +75,37 @@ class Livro:
     @indicacao.setter
     def indicacao(self, indicacao):
         self._indicacao = indicacao
+
+    def __str__(self):
+        return f"ID: {self._id} | Título: {self._titulo} | Categoria: {self._categoria} | Editora: {self._editora} | Edição: {self._edicao} | Ano: {self._ano} | Indicação: {self._indicacao}"
+
+class Aluno:
+    """
+        Uma classe Aluno com atributos: matricula, nome
+    """
+    def __init__(
+            self,
+            matricula,
+            nome,):
+        self._matricula = matricula
+        self._nome = nome
+    
+    @property
+    def matricula(self):
+        return self._matricula
+
+    @matricula.setter
+    def matricula(self, matricula):
+        self._matricula = matricula
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, nome):
+        self._nome = nome
+
+    
+    def __str__(self):
+        return f"ID: {self._matricula} | Nome: {self._nome}"
