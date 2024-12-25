@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/livros.png') }}" type="image/x-icon">
+    <title>Acervo Bibliográfico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Lista de Livros</h1>
+    {% if livros %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Categoria</th>
+                    <th>Editora</th>
+                    <th>Edição</th>
+                    <th>Ano</th>
+                    <th>Indicação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livro in livros %}
+                <tr>
+                    <td>{{ livro.id }}</td>
+                    <td>{{ livro.titulo }}</td>
+                    <td>{{ livro.categoria }}</td>
+                    <td>{{ livro.editora }}</td>
+                    <td>{{ livro.edicao }}</td>
+                    <td>{{ livro.ano }}</td>
+                    <td>{{ livro.indicacao }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="message">
+            Nenhum livro encontrado!
+        </div>
+    {% endif %}
 </body>
 </html>

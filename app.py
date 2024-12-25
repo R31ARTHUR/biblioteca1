@@ -3,12 +3,21 @@
 """
 from datetime import datetime, timedelta
 from flask import Flask, render_template, request, redirect, url_for
+from model import db, Livro, Aluno, Emprestimo
 
 app = Flask(__name__)
 
+# configuração do banco de dados
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///biblioteca.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
+
 # Dados simulados em memória
 alunos = []  # Lista para armazenar alunos
-livros = []  # Lista para armazenar livros
 emprestimos = []  # Lista para armazenar empréstimos
 
 # Página inicial
@@ -22,6 +31,7 @@ def acervo():
     """
     lista o acervo da biblioteca
     """
+    livros = Livro.query.all()
     return render_template('acervo.html', livros=livros)
 
 
